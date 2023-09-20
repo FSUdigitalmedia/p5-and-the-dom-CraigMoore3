@@ -1,15 +1,18 @@
 var myParagraph, myButton, myPic;
-x = 0;
-y = 0;
+x = 40;
+y = 40;
+a = 0;
+b = 0;
 
 function setup() {
-  myParagraph = createP("html");
-  myParagraph.position(0, 0);
+  myPic = createImg('shutdownSeq1.png', 'shutdownSequence()');
+  myPic.style("max-width", "500px");
+  myPic.position(a,b);
 
   myButton = createButton("Click Me!");
- 
- 
-   myPic = createImg('shutdownSeq1.png', 'shutdownSequence()')
+  myButton.position(25,25);
+
+  myParagraph = createP("html");
 }
 
 function draw() {
@@ -17,21 +20,27 @@ function draw() {
    myButton.mouseClicked(congratulate);
 }
 
-function makeRed() {
-  myParagraph.style("color", "red");
-}
-
 function congratulate() {
    console.log("Congrats");
    congratsP = createP("That was fantastic! Do it again");
    congratsP.position(x, y);
+
    count();
+
+   shiftPic();
+   myPic.position(a,b);
+
 }
 
 function count() {
    (x += 20);
    (y += 30)
    console.log(x,y);
+}
+
+function shiftPic() {
+   (a += 20);
+   console.log(a);
 }
 
 /*
@@ -72,6 +81,7 @@ Some Things to Try:
       I'll be commenting out the HTML photo for the sake of the following steps.
 4. Can you make the position of the image change when the
    button is pressed?
+      Done
 5. Make a slider and have it change the text size
 6. Add some CSS in style.css to make the slider huge and
    rotated 30 degrees
