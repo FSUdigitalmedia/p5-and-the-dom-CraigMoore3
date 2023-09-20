@@ -8,6 +8,7 @@ function setup() {
   myPic = createImg('shutdownSeq1.png', 'shutdownSequence()');
   myPic.style("max-width", "500px");
   myPic.position(a,b);
+  myPic.doubleClicked(goAway);
 
   myButton = createButton("Click Me!");
   myButton.position(25,25);
@@ -50,6 +51,9 @@ function sliderOutput() {
    myParagraph.style("font-size", sliderData);
 }
 
+function goAway () {
+   myPic.hide();
+}
 /*
 
 Some Questions:
@@ -95,5 +99,7 @@ Some Things to Try:
    rotated 30 degrees
       Done
 6. "hide" the text when the image is double-clicked
+      Done
+   
    
 */
