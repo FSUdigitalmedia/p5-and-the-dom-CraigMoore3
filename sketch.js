@@ -1,4 +1,4 @@
-var myParagraph, myButton;
+var myParagraph, myButton, myPic;
 x = 0;
 y = 0;
 
@@ -8,6 +8,8 @@ function setup() {
 
   myButton = createButton("Click Me!");
  
+ 
+   myPic = createImg('shutdownSeq1.png', 'shutdownSequence()')
 }
 
 function draw() {
@@ -65,6 +67,9 @@ Some Things to Try:
 3. Make a picture that shows up on the page. Does it have to
    be created in p5 or can you just place it in the HTML?
    What's the difference?
+      I did both. A screenshot from Busy Bee was loaded into the HTML, and an image from shutdownSequence() was loaded into the p5 doc.
+      My primary observations are that formatting the page will likely be easier and cleaner in HTML, but that p5 grants a useful layer of control that might be more useful in specific cases.
+      I'll be commenting out the HTML photo for the sake of the following steps.
 4. Can you make the position of the image change when the
    button is pressed?
 5. Make a slider and have it change the text size
