@@ -1,8 +1,8 @@
-var myParagraph, myButton, myPic;
+var myParagraph, myButton, myPic, mySlider;
 x = 40;
 y = 40;
 a = 0;
-b = 0;
+b = 150;
 
 function setup() {
   myPic = createImg('shutdownSeq1.png', 'shutdownSequence()');
@@ -12,24 +12,25 @@ function setup() {
   myButton = createButton("Click Me!");
   myButton.position(25,25);
 
+  mySlider = createSlider(0, 255, 10);
+
   myParagraph = createP("html");
 }
 
 function draw() {
    myParagraph.position(mouseX, mouseY);
-   myButton.mouseClicked(congratulate);
+   sliderOutput();
+   console.log(mySlider.value());
+   myButton.mouseClicked(userClicked);
 }
 
-function congratulate() {
-   console.log("Congrats");
+function userClicked() {
+   console.log("The user clicked the mouse.");
    congratsP = createP("That was fantastic! Do it again");
    congratsP.position(x, y);
-
    count();
-
    shiftPic();
    myPic.position(a,b);
-
 }
 
 function count() {
@@ -41,6 +42,11 @@ function count() {
 function shiftPic() {
    (a += 20);
    console.log(a);
+}
+
+function sliderOutput() {
+   let sliderData = ((mySlider.value()) + "px");
+   myParagraph.style("font-size", sliderData);
 }
 
 /*
@@ -83,6 +89,7 @@ Some Things to Try:
    button is pressed?
       Done
 5. Make a slider and have it change the text size
+      Done
 6. Add some CSS in style.css to make the slider huge and
    rotated 30 degrees
 6. "hide" the text when the image is double-clicked
