@@ -13,6 +13,7 @@ function setup() {
   myButton.position(25,25);
 
   mySlider = createSlider(0, 255, 10);
+  mySlider.class('bigSlider');
 
   myParagraph = createP("html");
 }
@@ -92,6 +93,7 @@ Some Things to Try:
       Done
 6. Add some CSS in style.css to make the slider huge and
    rotated 30 degrees
+      Done
 6. "hide" the text when the image is double-clicked
    
 */

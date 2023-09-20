@@ -6,3 +6,9 @@ p {
   font-size: normal;
   color: white;
 }
+
+.bigSlider {
+  margin-left: 50%;
+  scale: 2;
+  rotate: 30deg;
+}
